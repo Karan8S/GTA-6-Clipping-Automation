@@ -1,0 +1,47 @@
+# GTA 6 Clipping Configuration
+layout:
+  output_width: 1080
+  output_height: 1920
+  upper_height: 960         # Streamer Facecam vertical slice height
+  lower_height: 960         # Gameplay vertical slice height
+  facecam_mode: "auto"      # Automatic neural face detection using YuNet
+  facecam_preset: "top-right" # Fallback preset (webcam is top-right)
+  show_divider: true
+  divider_thickness: 6
+  divider_color: "0xFF007F" # Hex neon magenta border
+
+subtitles:
+  enabled: true
+  font_name: "Montserrat,Arial,Impact"
+  font_size: 26
+  primary_color: "&H00FFFFFF"   # Bright White text
+  highlight_color: "&H0000FFFF" # Vibrant Yellow active karaoke word highlight
+  outline_color: "&H00000000"   # Black border outline
+  outline_width: 3.5
+  shadow_depth: 2.0
+  max_words_per_batch: 3
+
+highlights:
+  min_clip_duration_sec: 25.0
+  max_clip_duration_sec: 58.0
+  target_clips_per_stream: 4
+
+seo:
+  streamer_name: "Streamer"
+  game_title: "GTA 6"
+
+publishing:
+  dry_run: true
+  youtube_enabled: true
+  youtube_client_secrets_path: "client_secrets.json"
+  youtube_privacy_status: "public"
+  youtube_schedule_mode: true
+  youtube_shorts_per_day: 2
+  youtube_schedule_timezone: "Asia/Kolkata"
+  youtube_schedule_times:
+    - "13:00"
+    - "19:00"
+  youtube_schedule_start_days_ahead: 1
+  instagram_enabled: true
+  instagram_account_id: ""
+  instagram_access_token: ""

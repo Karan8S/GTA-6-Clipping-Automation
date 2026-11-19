@@ -1,0 +1,61 @@
+# StreamClip Auto Configuration
+# Copy this file to config.yaml and customize your credentials and preferences.
+
+# 1. Output layout & framing
+layout:
+  output_width: 1080
+  output_height: 1920
+  upper_height: 960         # Streamer Facecam vertical slice height
+  lower_height: 960         # Gameplay vertical slice height
+  facecam_mode: "auto"      # "auto" (detects streamer webcam), "preset", or "custom"
+  facecam_preset: "top-right" # "top-left", "top-right", "bottom-left", "bottom-right"
+  show_divider: true
+  divider_thickness: 6
+  divider_color: "0xFF007F" # Hex neon magenta border
+
+# 2. Viral Subtitles / Captions (Middle of the screen)
+subtitles:
+  enabled: true
+  font_name: "Montserrat,Arial,Impact"
+  font_size: 26
+  primary_color: "&H00FFFFFF"   # Bright White text
+  highlight_color: "&H0000FFFF" # Vibrant Yellow active karaoke word highlight
+  outline_color: "&H00000000"   # Black border outline
+  outline_width: 3.5
+  shadow_depth: 2.0
+  max_words_per_batch: 3        # Fast-paced viral Shorts pacing
+
+# 3. Clip duration and highlight detection
+highlights:
+  min_clip_duration_sec: 25.0
+  max_clip_duration_sec: 58.0   # Under 60s for YouTube Shorts / Instagram Reels
+  target_clips_per_stream: 4    # Target viral moments to extract per stream
+
+# 4. SEO & Copywriting preferences
+seo:
+  streamer_name: "Streamer"
+  game_title: "GTA 6"
+  gemini_api_key: ""            # Optional: set GEMINI_API_KEY environment variable for AI generation
+
+# 5. Social Publishing & Channel Growth Scheduling
+publishing:
+  dry_run: true                 # Set to false to auto-publish / schedule live
+  
+  # YouTube Shorts
+  youtube_enabled: true
+  youtube_client_secrets_path: "client_secrets.json"
+  youtube_privacy_status: "public" # Used when schedule_mode is false ("public", "unlisted", "private")
+  
+  # Channel Growth Scheduling (Healthy Growth: Max 2 Shorts/Day)
+  youtube_schedule_mode: true
+  youtube_shorts_per_day: 2
+  youtube_schedule_timezone: "Asia/Kolkata" # Your local channel timezone
+  youtube_schedule_times:
+    - "13:00"                   # 1:00 PM Peak Midday
+    - "19:00"                   # 7:00 PM Prime Evening
+  youtube_schedule_start_days_ahead: 1 # Start scheduling from tomorrow (1) or today (0)
+
+  # Instagram Reels (Meta Graph API)
+  instagram_enabled: false
+  instagram_account_id: ""      # Your Instagram Business Account ID
+  instagram_access_token: ""    # Meta Graph API Long-lived User / Page Token
